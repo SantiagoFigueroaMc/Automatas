@@ -1,0 +1,37 @@
+%{
+    #include<stdio.h>
+    int chars = 0;
+    int words = 0;
+    int lines = 0;
+%}
+%%
+[a-zA-Z]+ { words++; chars += strlen(yytext); }
+\n        { chars++; lines++; }
+.         { chars++; }
+%%
+int main(int argc, char **argv){
+    yylex();
+    printf("%8d%8d%8d\n", chars, words, lines);
+}
+
+
+/* bajar flex en ubuntu  */
+
+
+/* Estructura: */
+%{
+  # Libreria y variables
+
+%}
+%%
+  # expresiones regulares
+%%
+  # El main o el resto de la aplicacion
+
+/* Expresion regular que reconoce emails: */
+[a-zA-Z.0-9_-]+@[a-zA-Z.0-9_-]+\.[a-zA-Z]\.[]{2,4}
+
+/*Para ejecutar en ubuntu*/
+gcc -o nombre_programa lex.yy.c -ll
+/*Luego, para ponerle un texto*/
+./nombre_programa < texto
