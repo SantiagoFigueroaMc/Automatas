@@ -1,0 +1,14 @@
+primero: flex    .l
+>> flex archivo.l
+    crea el .yy.c
+
+luego BISON      .y
+>> bison -d archivo.y
+    crea el .tab.c y len.tab.h
+
+>> gcc -o COMpilador len.tab.c y lex.yy.c -ll
+    crea 
+
+>> ./COMpilador < code.jr
+
+
