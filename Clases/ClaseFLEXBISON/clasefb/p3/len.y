@@ -33,6 +33,7 @@
 %type<num> assign
 %type<num> conditional
 %type<num> function
+%type<num> loop
 
 %left ADD
 %left OR
@@ -55,6 +56,7 @@ stmt: exp
 | assign
 | conditional
 | function
+| loop
 ;
 
 assign: LET NAME EQ exp { $$ = set_variable($2, $4); }
@@ -74,6 +76,9 @@ conditional: IF exp THEN stmt {if($2){$$ = $4;}}
 
 function: PRINT exp {printf("%.2f\n",$2);}
 | PRINT STRING {printf("%s\n",$2);}
+;
+
+loop: WHILE exp stmt { while($2){ $$ = $3; } }
 ;
 %%
 int main(int argc, char **argv)

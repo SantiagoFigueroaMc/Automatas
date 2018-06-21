@@ -2,4 +2,5 @@ INICIO
 Sea x igual 2
 Sea y igual 3
 Si (x mas y equivale 5) entonces imprimir "cool"
+Mientras (x mas y equivale 5) imprimir "hola" 
 FIN
