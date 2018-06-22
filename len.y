@@ -17,10 +17,10 @@
 
 
 %token NUMBER NAME STRING
-%token<num> EQ
+%token<num> EQ LOOPBGN LOOPEND
 %token<num> ADD EQUIV LEQ GEQ LET
 %token<num> IF THEN WHILE AND OR
-%token<num> EOL
+%token<num> EOL SEPARADOR
 %token<num> BGNP ENDP PRINT
 
 %type<num> NUMBER
@@ -33,6 +33,7 @@
 %type<num> assign
 %type<num> conditional
 %type<num> function
+%type<num> loop
 
 %left ADD
 %left OR
@@ -55,6 +56,8 @@ stmt: exp
 | assign
 | conditional
 | function
+| loop
+| LBR stmt RBR SEPARADOR LBR stmt RBR
 ;
 
 assign: LET NAME EQ exp { $$ = set_variable($2, $4); }
@@ -75,6 +78,10 @@ conditional: IF exp THEN stmt {if($2){$$ = $4;}}
 function: PRINT exp {printf("%.2f\n",$2);}
 | PRINT STRING {printf("%s\n",$2);}
 ;
+
+loop: WHILE exp LOOPBGN stmt {while($2){$$ = $4;};}
+;
+
 %%
 int main(int argc, char **argv)
 {
