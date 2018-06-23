@@ -841,12 +841,12 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 7 "flex.l"
-{ return LBR;}
+{ return LBR; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 8 "flex.l"
-{ return RBR;}
+{ return RBR; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
@@ -906,12 +906,12 @@ YY_RULE_SETUP
 case 14:
 YY_RULE_SETUP
 #line 20 "flex.l"
-{ return AND;}
+{ return AND; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 21 "flex.l"
-{ return OR;}
+{ return OR; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP

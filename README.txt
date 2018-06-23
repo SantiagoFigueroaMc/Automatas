@@ -2,7 +2,7 @@ Integrantes: Santiago Figueroa McIntyre
  			 María Pía Sánchez Gutiérrez
  			 
 MODO DE USO
-Para poder usar el lenguaje MAPI usted debe indicar el inicio y el fin del programa con los comandos "<<<" y ">>>", respectivamente.
+Para poder usar el lenguaje SANTIAGOMAPI usted debe indicar el inicio y el fin del programa con los comandos "<<<" y ">>>", respectivamente.
 Luego, para poder asignarle un valor a una variable, se debe escribir:
 	 -------------------------------------------------------------------------------
 	1|<<<
@@ -43,9 +43,9 @@ Consola:
 	 |"Dos es mayor a uno"
 	 |"Dos es equivale a dos"
 	 |"Uno es menor a dos"
-	 |"(Es falsa)"
+	 |(Falso)
 	 -------------------------------------------------------------------------------
-Como podemos ver, si la condicion es falsa, entonces imprime "(Es falsa)".
+Como podemos ver, si la condicion es falsa, entonces imprime "(Falso)".
 
 El ciclo "FOR" (con algunas limitaciones) no se queda atrás en este lenguaje, y para usarlo, se debe ocupar el comando "Para_cada_numero_menor_a". Este ciclo imprime o suma la cantidad de veces que uno quiera. Por ejemplo:
 Código:
@@ -68,3 +68,6 @@ Consola:
 
 Este lenguaje está pensado para programar de una manera más facil y en español, para sumar valores a las variables.
 OBS: solo se puede poner una linea a la condicional "IF" y al ciclo "FOR".
+
+Para poder ejecutar su código, usted deberá en la terminal escribir "Make" y luego "./program < nombredelcodigo.ms". Para ejecutar otro código, usted deberá escribir en la terminal "Make clear" y luego luego "./program < nombredelcodigo2.ms".
+
